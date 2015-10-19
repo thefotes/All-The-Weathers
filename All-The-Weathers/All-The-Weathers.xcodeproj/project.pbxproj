@@ -8,7 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		D042C8CE1BD59A120023D778 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D042C8CD1BD59A120023D778 /* AppDelegate.swift */; };
-		D042C8D01BD59A120023D778 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D042C8CF1BD59A120023D778 /* ViewController.swift */; };
+		D042C8D01BD59A120023D778 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D042C8CF1BD59A120023D778 /* MainViewController.swift */; };
 		D042C8D31BD59A120023D778 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D042C8D11BD59A120023D778 /* Main.storyboard */; };
 		D042C8D51BD59A120023D778 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D042C8D41BD59A120023D778 /* Assets.xcassets */; };
 		D042C8D81BD59A120023D778 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D042C8D61BD59A120023D778 /* LaunchScreen.storyboard */; };
@@ -36,7 +36,7 @@
 /* Begin PBXFileReference section */
 		D042C8CA1BD59A120023D778 /* All-The-Weathers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "All-The-Weathers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D042C8CD1BD59A120023D778 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		D042C8CF1BD59A120023D778 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D042C8CF1BD59A120023D778 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		D042C8D21BD59A120023D778 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D042C8D41BD59A120023D778 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D042C8D71BD59A120023D778 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -97,8 +97,11 @@
 		D042C8CC1BD59A120023D778 /* All-The-Weathers */ = {
 			isa = PBXGroup;
 			children = (
+				D042C8FE1BD59A530023D778 /* View Controllers */,
+				D042C8FD1BD59A450023D778 /* Data Helpers */,
+				D042C8FC1BD59A3D0023D778 /* Network Communicators */,
+				D042C8FB1BD59A380023D778 /* Models */,
 				D042C8CD1BD59A120023D778 /* AppDelegate.swift */,
-				D042C8CF1BD59A120023D778 /* ViewController.swift */,
 				D042C8D11BD59A120023D778 /* Main.storyboard */,
 				D042C8D41BD59A120023D778 /* Assets.xcassets */,
 				D042C8D61BD59A120023D778 /* LaunchScreen.storyboard */,
@@ -123,6 +126,35 @@
 				D042C8EF1BD59A120023D778 /* Info.plist */,
 			);
 			path = "All-The-WeathersUITests";
+			sourceTree = "<group>";
+		};
+		D042C8FB1BD59A380023D778 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
+		D042C8FC1BD59A3D0023D778 /* Network Communicators */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Network Communicators";
+			sourceTree = "<group>";
+		};
+		D042C8FD1BD59A450023D778 /* Data Helpers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = "Data Helpers";
+			sourceTree = "<group>";
+		};
+		D042C8FE1BD59A530023D778 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D042C8CF1BD59A120023D778 /* MainViewController.swift */,
+			);
+			name = "View Controllers";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -255,7 +287,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D042C8D01BD59A120023D778 /* ViewController.swift in Sources */,
+				D042C8D01BD59A120023D778 /* MainViewController.swift in Sources */,
 				D042C8CE1BD59A120023D778 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
