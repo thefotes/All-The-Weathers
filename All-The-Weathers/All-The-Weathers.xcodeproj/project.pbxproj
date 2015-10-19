@@ -14,6 +14,9 @@
 		D042C8D81BD59A120023D778 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D042C8D61BD59A120023D778 /* LaunchScreen.storyboard */; };
 		D042C8E31BD59A120023D778 /* All_The_WeathersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D042C8E21BD59A120023D778 /* All_The_WeathersTests.swift */; };
 		D042C8EE1BD59A120023D778 /* All_The_WeathersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D042C8ED1BD59A120023D778 /* All_The_WeathersUITests.swift */; };
+		D042C9011BD5A4820023D778 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D042C9001BD5A4820023D778 /* LocationManager.swift */; settings = {ASSET_TAGS = (); }; };
+		D042C9031BD5A8630023D778 /* Location.swift in Sources */ = {isa = PBXBuildFile; fileRef = D042C9021BD5A8630023D778 /* Location.swift */; settings = {ASSET_TAGS = (); }; };
+		D042C9071BD5AD860023D778 /* UILabel+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D042C9061BD5AD860023D778 /* UILabel+Extensions.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		D042C8E91BD59A120023D778 /* All-The-WeathersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "All-The-WeathersUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D042C8ED1BD59A120023D778 /* All_The_WeathersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = All_The_WeathersUITests.swift; sourceTree = "<group>"; };
 		D042C8EF1BD59A120023D778 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D042C9001BD5A4820023D778 /* LocationManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		D042C9021BD5A8630023D778 /* Location.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Location.swift; sourceTree = "<group>"; };
+		D042C9061BD5AD860023D778 /* UILabel+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -97,6 +103,7 @@
 		D042C8CC1BD59A120023D778 /* All-The-Weathers */ = {
 			isa = PBXGroup;
 			children = (
+				D042C8FF1BD5A3C50023D778 /* Managers */,
 				D042C8FE1BD59A530023D778 /* View Controllers */,
 				D042C8FD1BD59A450023D778 /* Data Helpers */,
 				D042C8FC1BD59A3D0023D778 /* Network Communicators */,
@@ -106,6 +113,7 @@
 				D042C8D41BD59A120023D778 /* Assets.xcassets */,
 				D042C8D61BD59A120023D778 /* LaunchScreen.storyboard */,
 				D042C8D91BD59A120023D778 /* Info.plist */,
+				D042C9061BD5AD860023D778 /* UILabel+Extensions.swift */,
 			);
 			path = "All-The-Weathers";
 			sourceTree = "<group>";
@@ -131,6 +139,7 @@
 		D042C8FB1BD59A380023D778 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				D042C9021BD5A8630023D778 /* Location.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -155,6 +164,14 @@
 				D042C8CF1BD59A120023D778 /* MainViewController.swift */,
 			);
 			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		D042C8FF1BD5A3C50023D778 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				D042C9001BD5A4820023D778 /* LocationManager.swift */,
+			);
+			name = Managers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -288,7 +305,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				D042C8D01BD59A120023D778 /* MainViewController.swift in Sources */,
+				D042C9071BD5AD860023D778 /* UILabel+Extensions.swift in Sources */,
 				D042C8CE1BD59A120023D778 /* AppDelegate.swift in Sources */,
+				D042C9031BD5A8630023D778 /* Location.swift in Sources */,
+				D042C9011BD5A4820023D778 /* LocationManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
