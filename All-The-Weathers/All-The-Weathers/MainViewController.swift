@@ -8,6 +8,7 @@ import UIKit
 final class MainViewController: UIViewController {
     
     @IBOutlet weak private var cityStateLabel: UILabel!
+    @IBOutlet weak private var currentTempLabel: UILabel!
     
     let animationDuration: NSTimeInterval = 0.8
     
@@ -20,6 +21,14 @@ final class MainViewController: UIViewController {
     
     func configureWithLocation(currentLocation: Location) {
         cityStateLabel.animateTextUpdate(currentLocation.cityAndState, animationDuration: animationDuration)
+        OpenWeatherMapNetworkCommunicator.sharedInstance.fetchCurrentWeather(currentLocation) { (weatherObjects) -> Void in
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                self.currentTempLabel.animateTextUpdate(weatherObjects!.last!.temperatureString, animationDuration: self.animationDuration)
+            })
+        }
+        
+        OpenWeatherMapNetworkCommunicator.sharedInstance.fetchFiveDayWeatherForecast(currentLocation) { (weatherObjects) -> Void in
+        }
     }
     
     deinit {
@@ -29,6 +38,8 @@ final class MainViewController: UIViewController {
     override func observeValueForKeyPath(keyPath: String?, ofObject object: AnyObject?, change: [String : AnyObject]?, context: UnsafeMutablePointer<Void>) {
         if let change = change {
             configureWithLocation(change["new"] as! Location)
+        } else {
+            super.observeValueForKeyPath(keyPath, ofObject: object, change: change, context: context)
         }
     }
 }
