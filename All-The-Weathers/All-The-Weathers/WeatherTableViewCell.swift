@@ -10,10 +10,8 @@ final class WeatherTableViewCell: UITableViewCell {
     @IBOutlet weak private var dayOfWeekLabel: UILabel!
     @IBOutlet weak private var temperatureLabel: UILabel!
     
-    private let animationDuration = 0.5
-    
     func configureWithWeather(weather: Weather) {
-        dayOfWeekLabel.animateTextUpdate(weather.dayOfWeek, animationDuration: animationDuration)
-        temperatureLabel.animateTextUpdate(weather.temperatureString, animationDuration: animationDuration)
+        dayOfWeekLabel.text = weather.dayOfWeek
+        temperatureLabel.text = weather.temperatureString
     }
 }
