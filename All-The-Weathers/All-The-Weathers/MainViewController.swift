@@ -18,6 +18,7 @@ final class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         LocationManager.sharedInstance.addObserver(self, forKeyPath: "currentLocation", options: [.New, .Old], context: nil)
+        MBProgressHUD.showHUDAddedTo(view, animated: true)
         LocationManager.sharedInstance.updateLocation()
         cityStateLabel.animateTextUpdate("Updating Current Location", animationDuration: animationDuration)
         let nib = UINib(nibName: .WeatherTableViewCell)
@@ -33,6 +34,7 @@ final class MainViewController: UIViewController {
             self.tableViewDataSource.weatherData = fiveDayForecast!
             self.currentTempLabel.animateTextUpdate(todaysWeather!.temperatureString, animationDuration: self.animationDuration)
             self.tableView.reloadData()
+            MBProgressHUD.hideHUDForView(self.view, animated: true)
         }
     }
     
