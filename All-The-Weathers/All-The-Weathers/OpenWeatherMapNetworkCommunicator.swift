@@ -14,8 +14,9 @@ final class OpenWeatherMapNetworkCommunicator {
         return NSURLSession(configuration: NSURLSessionConfiguration.defaultSessionConfiguration())
     }()
     
-    typealias NetworkCompletionBlock = ([Weather]?) -> Void
-   
+    typealias FiveDayRequestCompletionBlock = (fiveDayForecast: [Weather]?) -> Void
+    typealias WeatherDataCompletionBlock = (todaysWeather: Weather?, fiveDayForecast: [Weather]?) -> Void
+    
     private func urlEncodedCity(rawCity: String) -> String {
         return rawCity.stringByAddingPercentEncodingWithAllowedCharacters(.URLHostAllowedCharacterSet())!
     }
@@ -30,22 +31,44 @@ final class OpenWeatherMapNetworkCommunicator {
         return NSURL(string: urlString)!
     }
     
-    func fetchCurrentWeather(location: Location, completionBlock: (result: [Weather]?) -> Void) {
+    func fetchCurrentWeather(location: Location, completionBlock: (result: Weather?) -> Void) {
         let url = currentWeatherURL(location)
         session.dataTaskWithURL(url) { (data, response, error) -> Void in
             let weather = Weather()
             let json = try! NSJSONSerialization.JSONObjectWithData(data!, options: []) as! NSDictionary
             weather.currentTemperature = (json["main"] as! NSDictionary)["temp"] as! Int
             weather.dateOfRecord = NSDate()
-            completionBlock(result: [weather])
+            completionBlock(result: weather)
         }.resume()
     }
     
-    func fetchFiveDayWeatherForecast(location: Location, completionBlock: NetworkCompletionBlock) {
+    func fetchFiveDayWeatherForecast(location: Location, completionBlock: FiveDayRequestCompletionBlock) {
         let url = fiveDayRequestForLocation(location)
         session.dataTaskWithURL(url) { (data, response, error) -> Void in
-            let json = try! NSJSONSerialization.JSONObjectWithData(data!, options: [])
-            print(json)
+            let json = try! NSJSONSerialization.JSONObjectWithData(data!, options: []) as! NSDictionary
+            let weatherObjects = WeatherResponseSerializer.weatherObjectsFromDict(json)
+            completionBlock(fiveDayForecast: weatherObjects)
         }.resume()
+    }
+    
+    func fetchWeatherData(location: Location, completionBlock: WeatherDataCompletionBlock) {
+        let weatherRequestGroup = dispatch_group_create()
+        var currentWeather: Weather?
+        dispatch_group_enter(weatherRequestGroup)
+        fetchCurrentWeather(location) { (result) -> Void in
+            currentWeather = result
+            dispatch_group_leave(weatherRequestGroup)
+        }
+        
+        var fiveDayWeather: [Weather]?
+        dispatch_group_enter(weatherRequestGroup)
+        fetchFiveDayWeatherForecast(location) { (fiveDayForecast) -> Void in
+            fiveDayWeather = fiveDayForecast
+            dispatch_group_leave(weatherRequestGroup)
+        }
+        
+        dispatch_group_notify(weatherRequestGroup, dispatch_get_main_queue()) { () -> Void in
+            completionBlock(todaysWeather: currentWeather, fiveDayForecast: fiveDayWeather)
+        }
     }
 }

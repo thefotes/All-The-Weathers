@@ -29,15 +29,10 @@ final class MainViewController: UIViewController {
     
     func configureWithLocation(currentLocation: Location) {
         cityStateLabel.animateTextUpdate(currentLocation.cityAndState, animationDuration: animationDuration)
-        OpenWeatherMapNetworkCommunicator.sharedInstance.fetchCurrentWeather(currentLocation) { (weatherObjects) -> Void in
-            self.tableViewDataSource.weatherData = weatherObjects!
-            dispatch_async(dispatch_get_main_queue(), { () -> Void in
-                self.currentTempLabel.animateTextUpdate(weatherObjects!.last!.temperatureString, animationDuration: self.animationDuration)
-                self.tableView.reloadData()
-            })
-        }
-        
-        OpenWeatherMapNetworkCommunicator.sharedInstance.fetchFiveDayWeatherForecast(currentLocation) { (weatherObjects) -> Void in
+        OpenWeatherMapNetworkCommunicator.sharedInstance.fetchWeatherData(currentLocation) { (todaysWeather, fiveDayForecast) -> Void in
+            self.tableViewDataSource.weatherData = fiveDayForecast!
+            self.currentTempLabel.animateTextUpdate(todaysWeather!.temperatureString, animationDuration: self.animationDuration)
+            self.tableView.reloadData()
         }
     }
     
