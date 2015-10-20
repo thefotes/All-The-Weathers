@@ -17,7 +17,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="t34-y2-NQa">
-                                <rect key="frame" x="0.0" y="64" width="600" height="297"/>
+                                <rect key="frame" x="0.0" y="64" width="600" height="262"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="--" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oHh-kk-5GS">
                                         <rect key="frame" x="267" y="46" width="66" height="134"/>
@@ -41,17 +41,17 @@
                                     </label>
                                 </subviews>
                                 <animations/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
+                                    <constraint firstItem="nZ6-KJ-anG" firstAttribute="centerX" secondItem="oHh-kk-5GS" secondAttribute="centerX" id="M84-RF-Epw"/>
                                     <constraint firstItem="oHh-kk-5GS" firstAttribute="top" secondItem="t34-y2-NQa" secondAttribute="top" constant="46" id="MSr-e9-Gpm"/>
                                     <constraint firstItem="oHh-kk-5GS" firstAttribute="centerX" secondItem="t34-y2-NQa" secondAttribute="centerX" id="TNn-Ii-cBZ"/>
-                                    <constraint firstItem="nZ6-KJ-anG" firstAttribute="centerX" secondItem="t34-y2-NQa" secondAttribute="centerX" id="ddY-AC-TUI"/>
+                                    <constraint firstAttribute="bottom" secondItem="nZ6-KJ-anG" secondAttribute="bottom" constant="29" id="Y0v-iq-ywJ"/>
                                     <constraint firstItem="nZ6-KJ-anG" firstAttribute="top" secondItem="oHh-kk-5GS" secondAttribute="bottom" constant="29" id="p7h-MM-al2"/>
-                                    <constraint firstAttribute="height" constant="297" id="qmx-uN-LQm"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="eqH-s4-9Ed">
-                                <rect key="frame" x="0.0" y="361" width="600" height="239"/>
+                                <rect key="frame" x="0.0" y="326" width="600" height="274"/>
                                 <animations/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
@@ -71,6 +71,7 @@
                     <navigationItem key="navigationItem" title="All The Weather" id="T0S-nw-pv6"/>
                     <connections>
                         <outlet property="cityStateLabel" destination="nZ6-KJ-anG" id="2Uj-sJ-dT0"/>
+                        <outlet property="currentTempLabel" destination="oHh-kk-5GS" id="qFw-Pr-r0W"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
