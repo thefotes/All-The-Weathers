@@ -16,14 +16,21 @@ final class Weather {
     
     var dayOfWeek: String {
         get {
-            return self.formatter.stringFromDate(self.dateOfRecord)
+            formatter.dateFormat = "EEEE"
+            return formatter.stringFromDate(self.dateOfRecord)
         }
     }
     
     private lazy var formatter: NSDateFormatter = {
         let formatter = NSDateFormatter()
-        formatter.dateFormat = "EEEE"
         
         return formatter
     }()
+    
+    convenience init(jsonDict: NSDictionary) {
+        self.init()
+        self.currentTemperature = (jsonDict["main"] as! NSDictionary)["temp"] as! Int
+        self.formatter.dateFormat = "yyyy-MM-dd HH:mm:ss"
+        self.dateOfRecord = formatter.dateFromString(jsonDict["dt_txt"] as! String)
+    }
 }
