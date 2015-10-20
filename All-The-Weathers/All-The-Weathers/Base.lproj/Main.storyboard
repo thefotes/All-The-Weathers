@@ -72,6 +72,7 @@
                     <connections>
                         <outlet property="cityStateLabel" destination="nZ6-KJ-anG" id="2Uj-sJ-dT0"/>
                         <outlet property="currentTempLabel" destination="oHh-kk-5GS" id="qFw-Pr-r0W"/>
+                        <outlet property="tableView" destination="eqH-s4-9Ed" id="XM1-Rw-Xiy"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
