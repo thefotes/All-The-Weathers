@@ -30,6 +30,8 @@ final class MainViewController: UIViewController {
         tableView.dataSource = tableViewDataSource
         tableView.delegate = tableViewDelegate
         tableView.allowsSelection = false
+        tableView.separatorColor = UIColor.DarkGrayest()
+        tableView.separatorInset = UIEdgeInsetsZero
     }
     
     private func configureWithLocation(currentLocation: Location) {

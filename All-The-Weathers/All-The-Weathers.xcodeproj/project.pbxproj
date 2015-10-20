@@ -26,6 +26,7 @@
 		D0BA3BF81BD5CCF200EA5E38 /* UINib+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BA3BF71BD5CCF200EA5E38 /* UINib+Extensions.swift */; settings = {ASSET_TAGS = (); }; };
 		D0BA3BFA1BD5CE8900EA5E38 /* MainTableViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BA3BF91BD5CE8900EA5E38 /* MainTableViewDataSource.swift */; settings = {ASSET_TAGS = (); }; };
 		D0BA3BFF1BD5D01500EA5E38 /* MainTableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BA3BFE1BD5D01500EA5E38 /* MainTableViewDelegate.swift */; settings = {ASSET_TAGS = (); }; };
+		D0BB2B331BD6E01C007E555B /* UIColor+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0BB2B321BD6E01C007E555B /* UIColor+Extensions.swift */; settings = {ASSET_TAGS = (); }; };
 		EECFAEFB05FBCE4D7A458153 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FAD55525CDC086F3307CFB7 /* libPods.a */; };
 /* End PBXBuildFile section */
 
@@ -75,6 +76,7 @@
 		D0BA3BF91BD5CE8900EA5E38 /* MainTableViewDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewDataSource.swift; sourceTree = "<group>"; };
 		D0BA3BFE1BD5D01500EA5E38 /* MainTableViewDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainTableViewDelegate.swift; sourceTree = "<group>"; };
 		D0BB2B311BD6DA43007E555B /* All-The-Weathers-Bridging-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "All-The-Weathers-Bridging-Header.h"; sourceTree = "<group>"; };
+		D0BB2B321BD6E01C007E555B /* UIColor+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extensions.swift"; sourceTree = "<group>"; };
 		DD5FEA1A1333118CFCD63C9C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -247,6 +249,7 @@
 			children = (
 				D042C9061BD5AD860023D778 /* UILabel+Extensions.swift */,
 				D0BA3BF71BD5CCF200EA5E38 /* UINib+Extensions.swift */,
+				D0BB2B321BD6E01C007E555B /* UIColor+Extensions.swift */,
 			);
 			name = Extensions;
 			sourceTree = "<group>";
@@ -460,6 +463,7 @@
 				D042C8CE1BD59A120023D778 /* AppDelegate.swift in Sources */,
 				D042C9031BD5A8630023D778 /* Location.swift in Sources */,
 				D0BA3BF81BD5CCF200EA5E38 /* UINib+Extensions.swift in Sources */,
+				D0BB2B331BD6E01C007E555B /* UIColor+Extensions.swift in Sources */,
 				D042C9011BD5A4820023D778 /* LocationManager.swift in Sources */,
 				D042C90B1BD5BCD30023D778 /* Weather.swift in Sources */,
 			);
