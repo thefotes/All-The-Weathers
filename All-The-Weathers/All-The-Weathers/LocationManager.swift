@@ -30,7 +30,7 @@ extension LocationManager: CLLocationManagerDelegate {
         cllocationManager.stopUpdatingLocation()
         CLGeocoder().reverseGeocodeLocation(locations.last!) { (placemarks, error) -> Void in
             if let placemark = placemarks?[0] {
-                self.currentLocation = Location(city: placemark.locality!, state: placemark.administrativeArea!)
+                self.currentLocation = Location(placemark: placemark)
             }
         }
     }
