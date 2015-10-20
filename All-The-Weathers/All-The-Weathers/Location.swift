@@ -4,6 +4,7 @@
 //  Copyright © 2015 Peter Foti. All rights reserved.
 
 import Foundation
+import CoreLocation
 
 final class Location: NSObject {
     var city: String?
@@ -18,9 +19,9 @@ final class Location: NSObject {
         }
     }
     
-    convenience init(city: String, state: String) {
+    convenience init(placemark: CLPlacemark) {
         self.init()
-        self.city = city
-        self.state = state
+        self.city = placemark.locality!
+        self.state = placemark.administrativeArea!
     }
 }
