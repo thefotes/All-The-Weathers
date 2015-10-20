@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D00B1ADA1BD6D15600E85878 /* WeatherResponseSerializer.swift in Sources */ = {isa = PBXBuildFile; fileRef = D00B1AD91BD6D15600E85878 /* WeatherResponseSerializer.swift */; settings = {ASSET_TAGS = (); }; };
 		D042C8CE1BD59A120023D778 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D042C8CD1BD59A120023D778 /* AppDelegate.swift */; };
 		D042C8D01BD59A120023D778 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D042C8CF1BD59A120023D778 /* MainViewController.swift */; };
 		D042C8D31BD59A120023D778 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D042C8D11BD59A120023D778 /* Main.storyboard */; };
@@ -45,6 +46,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D00B1AD91BD6D15600E85878 /* WeatherResponseSerializer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeatherResponseSerializer.swift; sourceTree = "<group>"; };
 		D042C8CA1BD59A120023D778 /* All-The-Weathers.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "All-The-Weathers.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D042C8CD1BD59A120023D778 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D042C8CF1BD59A120023D778 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
@@ -96,6 +98,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		D00B1AD81BD6D14600E85878 /* Serializers */ = {
+			isa = PBXGroup;
+			children = (
+				D00B1AD91BD6D15600E85878 /* WeatherResponseSerializer.swift */,
+			);
+			name = Serializers;
+			sourceTree = "<group>";
+		};
 		D042C8C11BD59A120023D778 = {
 			isa = PBXGroup;
 			children = (
@@ -119,6 +129,7 @@
 		D042C8CC1BD59A120023D778 /* All-The-Weathers */ = {
 			isa = PBXGroup;
 			children = (
+				D00B1AD81BD6D14600E85878 /* Serializers */,
 				D0BA3BFD1BD5D00900EA5E38 /* Delegates */,
 				D0BA3BFB1BD5CF7100EA5E38 /* Extensions */,
 				D0BA3BFC1BD5CF7600EA5E38 /* Data Sources */,
@@ -367,6 +378,7 @@
 				D042C8D01BD59A120023D778 /* MainViewController.swift in Sources */,
 				D042C9091BD5AFED0023D778 /* OpenWeatherMapNetworkCommunicator.swift in Sources */,
 				D0BA3BFF1BD5D01500EA5E38 /* MainTableViewDelegate.swift in Sources */,
+				D00B1ADA1BD6D15600E85878 /* WeatherResponseSerializer.swift in Sources */,
 				D042C9071BD5AD860023D778 /* UILabel+Extensions.swift in Sources */,
 				D042C8CE1BD59A120023D778 /* AppDelegate.swift in Sources */,
 				D042C9031BD5A8630023D778 /* Location.swift in Sources */,
