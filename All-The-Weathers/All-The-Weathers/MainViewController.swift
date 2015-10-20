@@ -21,6 +21,10 @@ final class MainViewController: UIViewController {
         MBProgressHUD.showHUDAddedTo(view, animated: true)
         LocationManager.sharedInstance.updateLocation()
         cityStateLabel.animateTextUpdate("Updating Current Location", animationDuration: animationDuration)
+        setupTableView()
+    }
+    
+    private func setupTableView() {
         let nib = UINib(nibName: .WeatherTableViewCell)
         tableView.registerNib(nib, forCellReuseIdentifier: NibNames.WeatherTableViewCell.rawValue)
         tableView.dataSource = tableViewDataSource
@@ -28,7 +32,7 @@ final class MainViewController: UIViewController {
         tableView.allowsSelection = false
     }
     
-    func configureWithLocation(currentLocation: Location) {
+    private func configureWithLocation(currentLocation: Location) {
         cityStateLabel.animateTextUpdate(currentLocation.cityAndState, animationDuration: animationDuration)
         OpenWeatherMapNetworkCommunicator.sharedInstance.fetchWeatherData(currentLocation) { (todaysWeather, fiveDayForecast) -> Void in
             self.tableViewDataSource.weatherData = fiveDayForecast!
