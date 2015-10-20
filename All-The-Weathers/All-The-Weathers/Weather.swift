@@ -13,4 +13,17 @@ final class Weather {
             return "\(self.currentTemperature)°"
         }
     }
+    
+    var dayOfWeek: String {
+        get {
+            return self.formatter.stringFromDate(self.dateOfRecord)
+        }
+    }
+    
+    private lazy var formatter: NSDateFormatter = {
+        let formatter = NSDateFormatter()
+        formatter.dateFormat = "EEEE"
+        
+        return formatter
+    }()
 }
